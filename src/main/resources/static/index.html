@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java DevOps Demo</title>
+</head>
+
+<body>
+
+    <h1>Java DevOps Demo</h1>
+
+    <button onclick="getMessage()">Call Java Backend</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function getMessage() {
+
+            fetch('/api/hello')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('result').innerText = data;
+                });
+
+        }
+    </script>
+
+</body>
+</html>
